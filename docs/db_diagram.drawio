@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net" modified="2026-02-06T00:00:00.000Z" agent="ChatGPT" version="20.6.2">
+  <diagram id="db" name="DB Diagram">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="Genre\n- id\n- name" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="Actor\n- id\n- first_name\n- last_name" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="200" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Movie\n- id\n- title\n- description\n- duration" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="120" width="230" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="CinemaHall\n- id\n- name\n- rows\n- seats_in_row" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="60" width="240" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="MovieSession\n- id\n- movie_id\n- cinema_hall_id\n- show_time\n- price" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="240" width="260" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Order\n- id\n- user_id\n- created_at" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="330" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Ticket\n- id\n- order_id\n- movie_session_id\n- row\n- seat" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="430" width="260" height="160" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
