@@ -203,30 +203,23 @@ Tests use an **in-memory SQLite** database (no Postgres required). Each test fun
 
 ## Project structure
 
-This repository contains **two independent implementations** of the same cinema API:
-
-| Directory | Stack | Requirements file |
-|---|---|---|
-| `app/` | FastAPI + async SQLAlchemy + Alembic | `requirements.txt` |
-| `apps/` + `config/` | Django + Django REST Framework | `requirements-django.txt` |
-
 ```
-online_cinema/
-├── app/                          # FastAPI implementation
-│   ├── main.py                   # App factory, middleware, router registration
+online_cinema_fastapi/
+├── app/
+│   ├── main.py               # App factory, middleware, router registration
 │   ├── core/
-│   │   ├── config.py             # Pydantic settings (reads .env)
-│   │   ├── database.py           # Async SQLAlchemy engine + session
-│   │   ├── deps.py               # FastAPI dependencies (auth, DB)
-│   │   └── security.py           # JWT encode/decode, bcrypt
+│   │   ├── config.py         # Pydantic settings (reads .env)
+│   │   ├── database.py       # Async SQLAlchemy engine + session
+│   │   ├── deps.py           # FastAPI dependencies (auth, DB)
+│   │   └── security.py       # JWT encode/decode, bcrypt
 │   ├── models/
-│   │   ├── user.py               # User model
-│   │   └── cinema.py             # Genre, Actor, CinemaHall, Movie, MovieSession, Order, Ticket
+│   │   ├── user.py           # User model
+│   │   └── cinema.py         # Genre, Actor, CinemaHall, Movie, MovieSession, Order, Ticket
 │   ├── schemas/
-│   │   ├── auth.py               # Token request/response schemas
-│   │   └── cinema.py             # All Pydantic I/O schemas + Page[T]
+│   │   ├── auth.py           # Token request/response schemas
+│   │   └── cinema.py         # All Pydantic I/O schemas + Page[T]
 │   ├── crud/
-│   │   └── cinema.py             # All async DB operations
+│   │   └── cinema.py         # All async DB operations
 │   └── routers/
 │       ├── auth.py
 │       ├── genres.py
@@ -235,43 +228,22 @@ online_cinema/
 │       ├── movies.py
 │       ├── movie_sessions.py
 │       └── orders.py
-├── apps/                         # Django implementation
-│   └── cinema/
-│       ├── models.py
-│       ├── serializers.py
-│       ├── views.py
-│       ├── filters.py
-│       ├── permissions.py
-│       ├── urls.py
-│       └── migrations/
-├── config/                       # Django project config
-│   ├── settings.py
-│   ├── urls.py
-│   ├── asgi.py
-│   └── wsgi.py
-├── docs/                         # Project documentation
-│   ├── README.md                 # Index of docs contents
-│   ├── db_diagram.drawio         # Database diagram source (draw.io)
-│   └── db_diagram.png            # Database diagram export
-├── tests/                        # FastAPI test suite
-│   ├── conftest.py               # Async fixtures, in-memory DB setup
-│   ├── test_auth.py              # JWT token tests
-│   ├── test_movies.py            # Movie CRUD, filters, recommendations
+├── tests/
+│   ├── conftest.py           # Async fixtures, in-memory DB setup
+│   ├── test_auth.py          # JWT token tests
+│   ├── test_movies.py        # Movie CRUD, filters, recommendations
 │   └── test_sessions_and_orders.py  # Sessions, booking, double-booking
 ├── scripts/
-│   └── create_superuser.py       # Interactive admin user creator
-├── alembic/                      # FastAPI DB migrations
-│   ├── env.py                    # Async-capable Alembic environment
-│   └── versions/                 # Migration files go here
+│   └── create_superuser.py   # Interactive admin user creator
+├── alembic/
+│   ├── env.py                # Async-capable Alembic environment
+│   └── versions/             # Migration files go here
 ├── alembic.ini
-├── manage.py                     # Django management CLI
 ├── Dockerfile
 ├── docker-compose.yml
 ├── pytest.ini
-├── requirements.txt              # FastAPI stack dependencies
-├── requirements-django.txt       # Django stack dependencies
-├── .env.sample
-└── .gitignore
+├── requirements.txt
+└── .env.sample
 ```
 
 ---
