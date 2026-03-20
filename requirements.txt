@@ -1,11 +1,22 @@
-Django==4.2.10
-djangorestframework==3.15.2
-djangorestframework-simplejwt==5.3.1
-drf-spectacular==0.27.2
-django-filter==24.2
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+sqlalchemy==2.0.36
+alembic==1.14.0
+asyncpg==0.30.0
 psycopg2-binary==2.9.9
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.12
+pydantic==2.10.3
+pydantic-settings==2.6.1
+slowapi==0.1.9
+httpx==0.28.0
 
+# dev / test
 pytest==8.3.4
-pytest-django==4.10.0
+pytest-asyncio==0.24.0
+pytest-cov==6.0.0
+httpx==0.28.0
+aiosqlite==0.20.0
 coverage==7.6.10
 flake8==7.1.1
